@@ -13,17 +13,17 @@
 #include <QRegularExpression>
 
 PodmanToolboxToolView::PodmanToolboxToolView(QWidget *parent)
-    : QWidget(parent),
-      m_stackedWidget(new QStackedWidget(this)),
-      m_containerListPage(new QWidget(this)),
-      m_containerDetailsPage(new QWidget(this)),
-      m_statusLabel(new QLabel(this)),
-      m_containerComboBox(new QComboBox(this)),
-      m_startButton(new QPushButton(i18n("Start"), this)),
-      m_stopButton(new QPushButton(i18n("Stop"), this)),
-      m_execButton(new QPushButton(i18n("Exec"), this)),
-      m_connectButton(new QPushButton(i18n("Connect"), this)),
-      m_outputTextEdit(new QTextEdit(this))
+: QWidget(parent),
+m_stackedWidget(new QStackedWidget(this)),
+m_containerListPage(new QWidget(this)),
+m_containerDetailsPage(new QWidget(this)),
+m_statusLabel(new QLabel(this)),
+m_containerComboBox(new QComboBox(this)),
+m_startButton(new QPushButton(i18n("Start"), this)),
+m_stopButton(new QPushButton(i18n("Stop"), this)),
+m_execButton(new QPushButton(i18n("Exec"), this)),
+m_connectButton(new QPushButton(i18n("Connect"), this)),
+m_outputTextEdit(new QTextEdit(this))
 {
     // Set up container list page
     QVBoxLayout *containerListPageLayout = new QVBoxLayout(m_containerListPage);
@@ -109,16 +109,3 @@ void PodmanToolboxToolView::refreshContainers()
 void PodmanToolboxToolView::startContainer()
 {
     emit connectToContainer();
-}
-
-void PodmanToolboxToolView::stopContainer()
-{
-    emit connectToContainer();
-}
-
-void PodmanToolboxToolView::execInContainer()
-{
-    emit connectToContainer();
-}
-
-void PodmanToolboxToolView::onConnectButtonClicked()

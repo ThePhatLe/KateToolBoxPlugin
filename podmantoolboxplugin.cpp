@@ -20,9 +20,9 @@
 K_PLUGIN_FACTORY_WITH_JSON(PodmanToolboxPluginFactory, "podmantoolbox.json", registerPlugin<PodmanToolboxPlugin>();)
 
 PodmanToolboxPlugin::PodmanToolboxPlugin(QObject *parent)
-    : KPlugin(parent),
-      m_actionCollection(new KActionCollection(this)),
-      m_process(new QProcess(this))
+: KPlugin(parent),
+m_actionCollection(new KActionCollection(this)),
+m_process(new QProcess(this))
 {
     // Set up about data
     KAboutData aboutData(QStringLiteral("podmantoolbox"),
